@@ -19,7 +19,34 @@ def next_palin(input: str):
             num[0] = num[0] + 1
     elif( len(num) % 2 == 0):
         # even number of digits
-        out = ""
+        mid = int(len(num) / 2)
+        left = mid - 1
+        right = mid
+
+        suceess = False
+        while( left >= 0 and right < len(num)):
+            if(num[left] > num[right]):
+                #left number is greater no need to change mid
+                #copy all numbers from left to right
+                num = copy_num(num, left, right)
+                suceess = True
+                break
+            elif(num[left] < num[right]):
+                #left number is smaller than right
+                #add one to mid
+                num[mid - 1] = num[mid - 1] + 1
+                num[mid] = num[mid - 1]
+                num = copy_num(num, left, right)
+                suceess = True
+                break
+            else:    
+                left = left - 1
+                right = right + 1
+
+        if(not suceess):
+            # number is already a palindrome
+            num[mid] = num[mid] + 1
+            num[mid - 1] = num[mid - 1] + 1        
     else:
         # odd number of digits
         mid = math.floor(len(num) / 2)
@@ -36,7 +63,12 @@ def next_palin(input: str):
             elif(num[left] < num[right]):
                 #left number is smaller than right
                 #add one to mid
-                num[mid] = num[mid] + 1
+
+                # check if mid is 9
+                if(num[mid] == 9):
+                    num[mid] = 0
+                else:
+                    num[mid] = num[mid] + 1
                 num = copy_num(num, left, right)
                 suceess = True
                 break
