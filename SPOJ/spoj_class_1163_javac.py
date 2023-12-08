@@ -10,14 +10,26 @@ def java_vs_c(input: str):
         output = 'Error!'
     elif(cpp):
         words = re.split("_", input)
-        for x in words:
-            x.capitalize()
-        output = output.join(words)            
+        for word in words:
+            if(len(word) == 0):
+                output = 'Error!'
+
+        if(output == ''):        
+            output = words[0]
+            for i in range(1, len(words)):
+                output = output + words[i].capitalize()            
     elif(jav):
-        words = re.split("[A-Z]", input)
-        for x in words:
-            x.lower()
-        output = "_".join(words)
+        i = 0
+        while(i < len(input)):
+            if(input[i].isupper()):
+                if( i == 0):
+                    output = 'Error!'
+                    break
+                else:    
+                    output = output + '_' + input[i].lower()
+            else:
+                output = output + input[i]
+            i += 1
     else:
         output = input
     return output
