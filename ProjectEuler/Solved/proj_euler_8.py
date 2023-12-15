@@ -1,6 +1,6 @@
 import math
 str = ''
-file = open('.\ProjectEuler\proj_euler_8_input.txt', 'r')
+file = open('.\ProjectEuler\Solved\proj_euler_8_input.txt', 'r')
 for line in file.readlines():
     str = str + line.strip()
 
