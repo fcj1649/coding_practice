@@ -9,7 +9,7 @@ list_num[1] = False
 
 for i in range(2, max):
     if(list_num[i]):
-        j = i * 2
+        j = i * i
         while( j < max):
             list_num[j] = False
             j = j + i
