@@ -13,9 +13,6 @@ for i in range(2, max_prime):
             j = j + i
 dig = 4
 for i in range(len(list_num)-dig):
-    if(i==644):
-        pass
-
     if(list_num[i]==dig):
         isValid = True
         for j in range(dig-1):
