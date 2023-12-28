@@ -1,6 +1,6 @@
 import math
 str = ''
-file = open('.\ProjectEuler\proj_euler_42_words.txt', 'r')
+file = open('.\ProjectEuler\Solved\proj_euler_42_words.txt', 'r')
 words = file.readlines()[0].strip().replace('"','').split(',')
 count = 0
 for word in words:
