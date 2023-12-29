@@ -1,6 +1,9 @@
 import math
+import pathlib, os
+path = os.path.join(pathlib.Path(__file__).parent.resolve(),'proj_euler_8_input.txt')
+
 str = ''
-file = open('.\ProjectEuler\Solved\proj_euler_8_input.txt', 'r')
+file = open(path, 'r')
 for line in file.readlines():
     str = str + line.strip()
 
