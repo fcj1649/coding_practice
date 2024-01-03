@@ -1,5 +1,6 @@
-x = 0
-for i in range ( 1, 1000):
-    if ( i % 3 == 0 or i % 5 == 0 ):
-        x = x + i
-print(x)
+def get_sum_mul(num: int, mul: int):
+    num = num // mul
+    return mul * num * (num+1) // 2
+
+num = 1000 - 1
+print(get_sum_mul(num, 3) + get_sum_mul(num, 5) - get_sum_mul(num, 15))        
