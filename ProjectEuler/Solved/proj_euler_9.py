@@ -6,4 +6,4 @@ def pythTriple(n: int):
             if( c*c == a*a + b*b ):
                 print(a*b*c, a, b, c, c*c, a*a, b*b)
 
-pythTriple(1000)
+pythTriple(3000)

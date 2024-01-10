@@ -43,7 +43,36 @@ while(no_of_div < 500):
             break
     
     i += 1
-print(out, no_of_div) 
+print(i, out, no_of_div) 
 end_time = time.time()
 print("--- %s seconds ---" % ( end_time-start_time))
-    
+
+
+def no_of_divisor(num:int):
+    out = 1
+    i = 2
+    while(i * i <= num and num > 1):
+        c = 0
+        while(num % i == 0):
+            num = num // i
+            c += 1
+        out = out * (c + 1)    
+        i += 1
+    if(num != 1):
+        out = out * (1 + 1)
+    return out
+start_time = time.time()
+max_div = 500
+no_of_div = 1
+i = 1
+while(no_of_div < max_div):
+    tri_num = i * (i+1) // 2
+    no_of_div = no_of_divisor(tri_num)
+    i+=1
+print(i, tri_num, no_of_div)
+end_time = time.time()
+print("--- %s seconds ---" % ( end_time-start_time))
+
+
+prime_arr = [2,3,5,7,11,13,17,19,23,29]
+max_div = 500

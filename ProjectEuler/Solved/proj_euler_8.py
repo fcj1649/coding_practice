@@ -2,16 +2,15 @@ import math
 import pathlib, os
 path = os.path.join(pathlib.Path(__file__).parent.resolve(),'proj_euler_8_input.txt')
 
-str = ''
+num = ''
 file = open(path, 'r')
 for line in file.readlines():
-    str = str + line.strip()
+    num = num + line.strip()
 
 seq = 13
-max = -1
-for i in range(len(str)-seq+1):
-    prod = math.prod(int(x) for x in str[i:i+seq])
-    if(prod > max):
-        max = prod
-
-print(max)
+max_prod = -1
+for i in range(len(num)-seq+1):
+    prod = math.prod(int(x) for x in num[i:i+seq])
+    if prod > max_prod:
+        max_prod = prod
+print(max_prod)
