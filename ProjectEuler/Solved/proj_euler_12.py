@@ -72,7 +72,3 @@ while(no_of_div < max_div):
 print(i, tri_num, no_of_div)
 end_time = time.time()
 print("--- %s seconds ---" % ( end_time-start_time))
-
-
-prime_arr = [2,3,5,7,11,13,17,19,23,29]
-max_div = 500
