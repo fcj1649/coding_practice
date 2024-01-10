@@ -2,7 +2,7 @@ max = 20
 
 def checkOne(num: list):
     valid = True
-    for i in range(1, len(list)):
+    for i in range(1, len(num)):
         if(num[i]!=1):
             valid = False
             break
