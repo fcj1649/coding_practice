@@ -39,3 +39,40 @@ for i in range(1,1001):
         print(org, word, res)
 
 print(out)
+
+def num_to_word(num: int):
+    ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+    tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+    teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
+    i = num
+    result = ''
+    if (i >= 10 ** 9):
+        result += num_to_word(i // 10 ** 9) + ' Billion'
+        i = i % 10 ** 9
+    
+    if (i >= 10 ** 6):
+        result += num_to_word(i // 10 ** 6) + ' Million'
+        i = i % 10 ** 6
+    
+    if (i >= 10 ** 3):
+        result += num_to_word(i // 10 ** 3) + ' Thousand'
+        i = i % 10 ** 3
+        
+    if (i >= 10 ** 2):
+        result += ones[(i // 10 ** 2)] + ' Hundred'
+        i = i % 10 ** 2
+    
+    if (i >=10 and i < 20):
+        result += teens[int(i % 10)]
+    else:
+        if (i >= 20):
+            result += tens[i // 10]
+            i = int(i % 10)
+        result += ' ' + ones[i]
+    return result
+
+for i in range(10**6, 10**7):
+    a = num2words(i).replace('-','').replace(' and','').replace(' ','').replace(',','').lower()
+    b = num_to_word(i).replace(' ','').lower()
+    if(a != b):
+        print(i, a, b)
