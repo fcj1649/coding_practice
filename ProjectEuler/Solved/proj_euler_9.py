@@ -7,3 +7,17 @@ def pythTriple(n: int):
                 print(a*b*c, a, b, c, c*c, a*a, b*b)
 
 pythTriple(3000)
+
+import math
+max_N = 3000 + 1
+out = [-1] * max_N
+
+for a in range(1, max_N):
+    for b in range(a, max_N - a):
+        c_sqr = a * a + b * b
+        c = math.sqrt(c_sqr)
+        if (c.is_integer()):
+            if(a+b+c < max_N):
+                if a*b*c > out[a+b+int(c)]:
+                    out[a+b+int(c)] = a*b*c
+print(out[3000])

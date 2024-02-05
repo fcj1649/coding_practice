@@ -68,4 +68,3 @@ for a in range(2,max_a+1):
     print(a, count)
     
 print(out)
-
