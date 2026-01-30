@@ -1,4 +1,5 @@
-file = open('.\ProjectEuler\Solved\proj_euler_0022_names.txt', 'r')
+file = open('.\ProjectEuler\Solved\proj_euler_0022_names_new.txt', 'r')
+tot_sum = 0
 for line in file.readlines():
     names = line.strip().replace('"','').split(",")
     names.sort()
