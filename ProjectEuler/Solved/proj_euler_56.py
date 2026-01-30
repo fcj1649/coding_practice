@@ -1,5 +1,5 @@
 max_sum = -1
-
+out = 0
 for a in range(2,100):
     for b in range(2,100):
         num = a**b
